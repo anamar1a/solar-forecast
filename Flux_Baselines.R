@@ -115,6 +115,6 @@ plot(fluxB$Flux, col = "red", type = "l", ylim = c(min(predictedMA, fluxB$Flux),
 points(as.numeric(predictedMA), col = "blue", type = "l")
 legend("topleft", col = c("red", "blue"), c("real data", "forecasted data"), pch = 19)
 
-predictedValues<-as.data.frame(c(fluxB$Flux, predictedMA, predictedSE$mean, predictedRW$mean, predictedHW))
+predictedValues<-as.data.frame(c(fluxB$Flux, as.numeric(predictedMA), predictedSE$mean, predictedRW$mean, as.numeric(predictedHW)))
 
 write.csv(predictedValues, "PredictedFromBaselines.csv")
